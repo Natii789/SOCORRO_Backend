@@ -1,4 +1,4 @@
-import Conta from "../modelo/conta.js";
+import Conta from '../modelo/conta.js';
 
 export default class ContaCTRL {
 

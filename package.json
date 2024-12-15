@@ -9,6 +9,7 @@
     "dev": "npm run build && node server.js",
     "test": "jest",
     "predeploy": "npm run build",
+    "build": "react-scripts build",
     "deploy": "gh-pages -d build"
   },
   "dependencies": {
@@ -20,6 +21,7 @@
     "dotenv": "^16.4.7",
     "express": "^4.17.1",
     "gh-pages": "^6.2.0",
-    "mysql2": "^3.11.5"
+    "mysql2": "^3.11.5",
+    "react-scripts": "5.0.1"
   }
 }

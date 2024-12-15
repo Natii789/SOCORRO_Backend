@@ -20,7 +20,8 @@ app.use(express.json());
 
 app.use('/conta', rotaConta);
 app.use('/tipoConta', rotaTipoConta);
-
+/*
 app.listen(port, host, () => {
     console.log(`Servidor iniciado na porta ${port}`);
 });
+*/

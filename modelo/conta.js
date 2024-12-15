@@ -2,7 +2,7 @@ import ContaDAO from "../persistencia/ContaDAO.js";
 
 export default class Conta{
     #id;
-    #email ;
+    #email;
     #nome;
     #senha;
     #nascimento;
@@ -12,7 +12,7 @@ export default class Conta{
         this.#id = id;
         this.#email = email;
         this.#nome = nome;
-        //this.#senha = senha;
+        this.#senha = senha;
         this.#nascimento = nascimento;
         this.#tipoContaId = tipoContaId;
     }
@@ -70,6 +70,7 @@ export default class Conta{
             id: this.#id,
             email: this.#email,
             nome: this.#nome,
+            senha: this.#senha,
             nascimento: this.#nascimento,
             tipoContaId: this.#tipoContaId
         };

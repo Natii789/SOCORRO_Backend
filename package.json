@@ -7,14 +7,19 @@
   "scripts": {
     "start": "node index.js",
     "dev": "npm run build && node server.js",
-    "test": "jest"
+    "test": "jest",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "bcrypt": "^5.1.1",
+    "build": "^0.1.4",
     "cors": "^2.8.5",
     "denv": "^1.0.4",
+    "deploy": "^1.0.3",
     "dotenv": "^16.4.7",
     "express": "^4.17.1",
+    "gh-pages": "^6.2.0",
     "mysql2": "^3.11.5"
   }
 }

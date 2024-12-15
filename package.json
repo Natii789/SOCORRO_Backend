@@ -5,7 +5,9 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "dev": "npm run build && node server.js",
+    "test": "jest"
   },
   "dependencies": {
     "bcrypt": "^5.1.1",

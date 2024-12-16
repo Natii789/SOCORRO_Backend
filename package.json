@@ -5,7 +5,9 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
+    "dev": "node index.js",
     "start": "node index.js",
+    "build": "echo 'Build command here'",
     "test": "echo Nenhum comando de teste foi especificado."
   },
   "dependencies": {

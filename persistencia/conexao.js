@@ -1,7 +1,6 @@
 import mysql from 'mysql2/promise';
 import 'dotenv/config';
 
-
 export default async function conectarBanco() {
     if (global.poolConexoes) {
         return await global.poolConexoes.getConnection();
@@ -20,4 +19,9 @@ export default async function conectarBanco() {
     })
     global.poolConexoes = pool;
     return await pool.getConnection();
+}
+
+export function liberarConexao(conexao) {
+    global.poolConexoes.releaseConnection(conexao);
+    conexao.release();
 }

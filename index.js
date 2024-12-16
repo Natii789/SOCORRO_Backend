@@ -6,9 +6,6 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
-const host = '0.0.0.0';
-const port = 3000;
-
 const app = express();
 
 app.use(cors({

@@ -15,8 +15,6 @@ app.use(cors({
     methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
 }));
 
-app.use(express.static('./publico'));
-
 app.use('/conta', rotaConta);
 app.use('/tipoConta', rotaTipoConta);
 

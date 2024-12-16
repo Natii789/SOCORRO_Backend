@@ -11,6 +11,7 @@ export default class ContaDAO {
 
     async init() {
         try {
+            const conexao = await conectarBanco();
             const sql = `
                 CREATE TABLE IF NOT EXISTS conta (
                     id INT NOT NULL AUTO_INCREMENT, 
@@ -21,8 +22,8 @@ export default class ContaDAO {
                     senha VARCHAR(255) NOT NULL,
                     PRIMARY KEY (id)
                 )`;
-            const conexao = await conectarBanco();
-            const resultado = await conexao.execute(sql);
+            
+            await conexao.execute(sql);
             liberarConexao(conexao);
             console.log("Tabela conta iniciada com sucesso!");
         } catch (erro) {
@@ -30,7 +31,8 @@ export default class ContaDAO {
         }
     }
 
-    async gravar(conta) {
+    async incluir(conta) {
+        const conexao = await conectarBanco();
         if (conta instanceof Conta) {
             const sql = `
                 INSERT INTO conta (email, nome, nascimento, tipoContaId, senha) 
@@ -44,8 +46,8 @@ export default class ContaDAO {
                 conta.tipoContaId, 
                 hashedPassword
             ];
-            const conexao = await conectarBanco();
-            const resultado = await conexao.execute(sql, parametros);
+            
+            const [resultado] = await conexao.execute(sql, parametros);
             conta.id = resultado[0].insertId;
             liberarConexao(conexao);
         }

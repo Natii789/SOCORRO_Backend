@@ -24,7 +24,7 @@ export default class TipoContaDAO {
         }
     }
 
-    async gravar(tipoConta) {
+    async incluir(tipoConta) {
         if (tipoConta instanceof TipoConta) {
             const sql = "INSERT INTO tipoConta (descricao) VALUES (?)";
             const parametros = [tipoConta.descricao];

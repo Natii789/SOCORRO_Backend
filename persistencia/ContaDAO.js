@@ -1,6 +1,6 @@
 import Conta from "../modelo/conta.js";
-import conectarBanco, { liberarConexao } from "../persistencia/conexao.js";
-import TipoConta from "../modelo/tipoConta.js";
+import conectarBanco, { liberarConexao } from "./conexao.js";
+
 import bcrypt from 'bcrypt';
 
 export default class ContaDAO {

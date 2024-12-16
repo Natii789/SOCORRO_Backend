@@ -1,5 +1,5 @@
 import TipoConta from "../modelo/tipoConta.js";
-import conectarBanco, { liberarConexao } from "../persistencia/conexao.js";
+import conectarBanco, { liberarConexao } from "./conexao.js";
 
 export default class TipoContaDAO {
 

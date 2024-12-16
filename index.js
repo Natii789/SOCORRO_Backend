@@ -17,3 +17,5 @@ app.use(express.json());
 
 app.use('/conta', rotaConta);
 app.use('/tipoConta', rotaTipoConta);
+
+export default app;

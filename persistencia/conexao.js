@@ -1,4 +1,7 @@
 import mysql from 'mysql2/promise';
+import 'dotenv/config';
+
+
 export default async function conectarBanco() {
     if (global.poolConexoes) {
         return await global.poolConexoes.getConnection();
@@ -11,18 +14,10 @@ export default async function conectarBanco() {
         password: process.env.BD_SENHA,
         database: process.env.BASE_DE_DADOS,
         waitForConnections: true,
-        connectionLimit: 10,
-        maxIdle: 10, // max idle connections, the default value is the same as `connectionLimit`
-        idleTimeout: 60000, // idle connections timeout, in milliseconds, the default value 60000
-        queueLimit: 0,
-        enableKeepAlive: true,
-        keepAliveInitialDelay: 0
+        queueLimit: 20,
+        connectTimeout: 60000,
+
     })
     global.poolConexoes = pool;
     return await pool.getConnection();
-}
-
-export function liberarConexao(conexao) {
-    global.poolConexoes.releaseConnection(conexao);
-    conexao.release();
 }

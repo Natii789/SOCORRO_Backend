@@ -5,11 +5,11 @@ const rota = Router();
 const contaCTRL = new ContaCTRL();
 
 rota.get("/", contaCTRL.consultar)
-    .get("/:termo", contaCTRL.consultar)
-    .post("/", contaCTRL.gravar)
-    .put("/", contaCTRL.alterar)
-    .patch("/", contaCTRL.alterar)
-    .delete("/", contaCTRL.excluir)
-    .post('/verificarSenha', contaCTRL.verificarSenha);
+rota.get("/:termo", contaCTRL.consultar)
+rota.post("/", contaCTRL.gravar)
+rota.put("/", contaCTRL.alterar)
+rota.patch("/", contaCTRL.alterar)
+rota.delete("/", contaCTRL.excluir)
+rota.post('/verificarSenha', contaCTRL.verificarSenha);
 
 export default rota;
